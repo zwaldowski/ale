@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DBFE3D281E172860008EA21C /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFE3D271E172860008EA21C /* Parser.swift */; };
 		OBJ_100 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Token.swift */; };
 		OBJ_101 /* UnicodeExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* UnicodeExtended.swift */; };
 		OBJ_108 /* CommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* CommandTests.swift */; };
@@ -95,6 +96,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DBFE3D271E172860008EA21C /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Argument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Argument.swift; sourceTree = "<group>"; };
 		OBJ_12 /* ArgumentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentParser.swift; sourceTree = "<group>"; };
 		OBJ_13 /* ArgumentValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentValue.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				OBJ_26 /* Event.swift */,
 				OBJ_27 /* Node.swift */,
 				OBJ_28 /* OrderedDictionary.swift */,
+				DBFE3D271E172860008EA21C /* Parser.swift */,
 				OBJ_29 /* Reader.swift */,
 				OBJ_30 /* Scanner.swift */,
 				OBJ_31 /* Token.swift */,
@@ -270,7 +273,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -278,7 +281,6 @@
 				OBJ_33 /* Tests */,
 				OBJ_41 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -422,7 +424,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_41 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -496,6 +498,7 @@
 			files = (
 				OBJ_93 /* ContiguousReaders.swift in Sources */,
 				OBJ_94 /* Error.swift in Sources */,
+				DBFE3D281E172860008EA21C /* Parser.swift in Sources */,
 				OBJ_95 /* Event.swift in Sources */,
 				OBJ_96 /* Node.swift in Sources */,
 				OBJ_97 /* OrderedDictionary.swift in Sources */,
