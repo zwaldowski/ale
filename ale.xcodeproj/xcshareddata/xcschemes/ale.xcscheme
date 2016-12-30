@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_32"
+               BlueprintIdentifier = "OBJ_48"
                BuildableName = "ale"
                BlueprintName = "ale"
                ReferencedContainer = "container:ale.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_42"
+               BlueprintIdentifier = "OBJ_59"
                BuildableName = "Command.framework"
                BlueprintName = "Command"
                ReferencedContainer = "container:ale.xcodeproj">
@@ -42,9 +42,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_44"
+               BlueprintIdentifier = "OBJ_63"
                BuildableName = "libale.framework"
                BlueprintName = "libale"
+               ReferencedContainer = "container:ale.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OBJ_61"
+               BuildableName = "YAML.framework"
+               BlueprintName = "YAML"
                ReferencedContainer = "container:ale.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -54,15 +68,26 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_68"
+               BlueprintIdentifier = "OBJ_103"
                BuildableName = "CommandTests.xctest"
                BlueprintName = "CommandTests"
+               ReferencedContainer = "container:ale.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OBJ_113"
+               BuildableName = "YAMLTests.xctest"
+               BlueprintName = "YAMLTests"
                ReferencedContainer = "container:ale.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -80,16 +105,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_32"
+            BlueprintIdentifier = "OBJ_48"
             BuildableName = "ale"
             BlueprintName = "ale"
             ReferencedContainer = "container:ale.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
