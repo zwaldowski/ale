@@ -26,31 +26,40 @@ public enum YAMLEncoding {
 
 // MARK: -
 
-private struct CountingDataIterator<Element: UnsignedInteger>: IteratorProtocol {
-    var base: Data.Iterator
-    var offset = 0
+private struct ByteIterator<Element: UnsignedInteger>: IteratorProtocol {
+    private let data: Data
+    private(set) var offset: Data.Index
 
     init(data: Data) {
-        base = data.makeIterator()
+        self.data = data
+        self.offset = data.startIndex
     }
 
-    mutating func next() -> Element? {
-        var next = Element.allZeros
-        for offset in 0 ..< MemoryLayout<Element>.size {
-            guard var byte: Element = base.next().map(numericCast) else { return nil }
-            for _ in 0 ..< offset {
-                byte = byte &* 256
+    private typealias Buffer = (
+        Element, Element, Element, Element, Element, Element, Element, Element,
+        Element, Element, Element, Element, Element, Element, Element, Element
+    )
+    private var buffer: Buffer = (0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+    public mutating func next() -> Element? {
+        guard let nextOffset = data.index(offset, offsetBy: MemoryLayout<Element>.size, limitedBy: data.endIndex) else { return nil }
+        defer { offset = nextOffset }
+        return withUnsafeMutablePointer(to: &buffer) { (baseAddress) in
+            let pointerToElements = UnsafeMutableRawPointer(baseAddress)
+            let offsetInBuffer = offset % MemoryLayout<Buffer>.size
+            if offsetInBuffer == 0 {
+                let upperBound = data.index(offset, offsetBy: MemoryLayout<Buffer>.size, limitedBy: data.endIndex) ?? data.endIndex
+                data.copyBytes(to: pointerToElements.assumingMemoryBound(to: UInt8.self), from: offset ..< upperBound)
             }
-            next |= byte
+            return pointerToElements.load(fromByteOffset: offsetInBuffer, as: Element.self)
         }
-        return next
     }
 }
 
 /// A concrete scanner that reads code units of specific type from `Data`.
 struct ContiguousReader<Codec: UnicodeCodec>: Reader where Codec.CodeUnit: UnsignedInteger {
 
-    private var iterator: CountingDataIterator<Codec.CodeUnit>
+    private var iterator: ByteIterator<Codec.CodeUnit>
     private var codec = Codec()
 
     private var line = 1
@@ -60,7 +69,7 @@ struct ContiguousReader<Codec: UnicodeCodec>: Reader where Codec.CodeUnit: Unsig
 
     /// Creates a scanner for iterating through `data`.
     init(data: Data) {
-        iterator = CountingDataIterator(data: data)
+        iterator = ByteIterator(data: data)
     }
 
     mutating func advance() throws {
