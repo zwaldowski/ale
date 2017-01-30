@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_32"
+               BlueprintIdentifier = "OBJ_47"
                BuildableName = "ale"
                BlueprintName = "ale"
                ReferencedContainer = "container:ale.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_42"
+               BlueprintIdentifier = "OBJ_58"
                BuildableName = "Command.framework"
                BlueprintName = "Command"
                ReferencedContainer = "container:ale.xcodeproj">
@@ -42,9 +42,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_44"
+               BlueprintIdentifier = "OBJ_62"
                BuildableName = "libale.framework"
                BlueprintName = "libale"
+               ReferencedContainer = "container:ale.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OBJ_60"
+               BuildableName = "YAML.framework"
+               BlueprintName = "YAML"
                ReferencedContainer = "container:ale.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -61,9 +75,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_68"
+               BlueprintIdentifier = "OBJ_102"
                BuildableName = "CommandTests.xctest"
                BlueprintName = "CommandTests"
+               ReferencedContainer = "container:ale.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "OBJ_112"
+               BuildableName = "YAMLTests.xctest"
+               BlueprintName = "YAMLTests"
                ReferencedContainer = "container:ale.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -84,7 +108,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_32"
+            BlueprintIdentifier = "OBJ_47"
             BuildableName = "ale"
             BlueprintName = "ale"
             ReferencedContainer = "container:ale.xcodeproj">
